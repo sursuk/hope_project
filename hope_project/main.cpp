@@ -20,7 +20,7 @@ int main() {
 	std::vector <float> vectorA;
 	std::vector <float> vectorInterval;
 	std::vector <float> trashVector;
-
+	
 	auto print = [](const float& num) { std::cout << " " << num; };
 
 	int n;
@@ -34,13 +34,15 @@ int main() {
 	a = -2;
 	b = 5;
 
-	if (!queue.empty()) {
+	while (!queue.empty()) {
 		float temp = queue.get_element();
-		if (temp < n) {
-			vectorA.push_back(temp);
-		}
-		else if ((a <= temp) && (temp <= b)) {
-			vectorInterval.push_back(temp);
+		if ((temp < n) || (a <= temp) && (temp <= b)) {
+			if (temp < n) {
+				vectorA.push_back(temp);
+			}
+			if ((a <= temp) && (temp <= b)) {
+				vectorInterval.push_back(temp);
+			}
 		}
 		else {
 			trashVector.push_back(temp);
@@ -49,9 +51,9 @@ int main() {
 
 	std::cout << std::endl;
 	std::for_each(vectorA.cbegin(), vectorA.cend(), print);
-	std::cout << std::endl;
+	std::cout << std::endl << "---------------------------" << std::endl;
 	std::for_each(vectorInterval.cbegin(), vectorInterval.cend(), print);
-	std::cout << std::endl;
+	std::cout << std::endl << "---------------------------" << std::endl;
 	std::for_each(trashVector.cbegin(), trashVector.cend(), print);
 	
 	return 0;

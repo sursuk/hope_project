@@ -12,7 +12,7 @@
 
 Queue::Queue()
 {
-	for (float counter = -10.0; counter < 10.00; counter =+ 0.1) {
+	for (float counter = -10.0; counter < 10.00; counter += 0.1) {
 		list.push_back(counter);
 	}
 }
