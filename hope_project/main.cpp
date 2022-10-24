@@ -18,7 +18,7 @@
 
 int main() {
 
-	std::vector<int> test_vector = { 4, 3, 5, -4, 5, -3, 2, 3 };
+	std::vector<int> test_vector = { 2, -3, 5, -4, 5, -3, 2, -3 };
 	singly_linked_list list(test_vector);
 
 	std::cout << "before: ";
