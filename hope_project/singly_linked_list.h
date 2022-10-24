@@ -1,6 +1,7 @@
 #pragma once
 
 #include<vector>
+#include<iostream>
 
 class singly_linked_list
 {
@@ -12,6 +13,7 @@ public:
 	void putValue(int index, int value);
 	void push_back(int value);
 
+	void print();
 	bool is_empty();
 	int length();
 
@@ -21,7 +23,7 @@ private:
 		int value;
 		Node* next = nullptr; 
 
-		void set_value(int value) { this->value = value; }
+	//	void set_value(int value) { this->value = value; }
 
 		Node(int _value) : value(_value), next(nullptr){}
 	};

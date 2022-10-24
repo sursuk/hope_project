@@ -93,6 +93,19 @@ void singly_linked_list::push_back(int value)
 	last = node;
 }
 
+void singly_linked_list::print()
+{
+	if (is_empty()) {
+		return;
+	}
+	Node* node = head;
+	while (node) {
+		std::cout << node->value << " ";
+		node = node->next;
+	}
+	std::cout << std::endl;
+}
+
 bool singly_linked_list::is_empty()
 {
 	return head == nullptr;
