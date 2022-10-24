@@ -27,8 +27,11 @@ int singly_linked_list::getValue(int index)
 	if (index > length()) {
 		throw "index > size of list";
 	}
+	if (index == 0) {
+		return head->value;
+	}
 	Node* node = head;
-	for (int i = 0; i < length(); i++) {
+	for (int i = 0; i < index; i++) {
 		node = node->next;
 	}
 	return node->value;
@@ -72,9 +75,9 @@ void singly_linked_list::putValue(int index, int value)
 	//put to middle list
 	Node* node = new Node(value);//new element
 
-	auto iterator = head;
+	Node* iterator = head;
 	for (int i = 0; i < index - 1; i++) {
-		iterator = head->next;
+		iterator = iterator->next;
 	}
 	node->next = iterator->next->next;
 	delete iterator->next;
@@ -87,6 +90,7 @@ void singly_linked_list::push_back(int value)
 	size++;
 	if (is_empty()) {
 		head = node;
+		last = node;
 		return;
 	}
 	last->next = node;

@@ -23,8 +23,6 @@ private:
 		int value;
 		Node* next = nullptr; 
 
-	//	void set_value(int value) { this->value = value; }
-
 		Node(int _value) : value(_value), next(nullptr){}
 	};
 

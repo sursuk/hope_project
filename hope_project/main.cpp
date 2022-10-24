@@ -18,10 +18,10 @@
 
 int main() {
 
-	std::vector<int> test_vector = { 4, 3, 5, -4, 5, -3, 7, 3 };
+	std::vector<int> test_vector = { 4, 3, 5, -4, 5, -3, 2, 3 };
 	singly_linked_list list(test_vector);
 
-	std::cout << "before";
+	std::cout << "before: ";
 	list.print();
 	//find max value and index max value
 	int max = INT_MIN;
@@ -38,7 +38,7 @@ int main() {
 			list.putValue(i, 0);
 		}
 	}
-	std::cout << "after"; 
+	std::cout << " after: "; 
 	list.print();
 	return 0;
 }
