@@ -7,12 +7,12 @@
 =извлечение элемента из начала;
 */
 
-#include"queue.h";
+#include"queue.h"
 
 
 Queue::Queue()
 {
-	for (float counter = -10.0; counter < 10.00; counter += 0.1) {
+	for (char counter = 'a'; counter < 'z'; counter++) {
 		list.push_back(counter);
 	}
 }
@@ -27,7 +27,7 @@ Queue::Queue(std::string path)
 	}
 
 	while (!input_file.eof()) {
-		float temp;
+		char temp;
 		input_file >> temp;
 		push(temp);
 	}
@@ -38,16 +38,16 @@ Queue::~Queue()
 {
 }
 
-void Queue::push(float number)
+void Queue::push(char symbol)
 {
-	list.push_back(number);
+	list.push_back(symbol);
 }
 
-float Queue::get_element()
+char Queue::get_element()
 {
-	float returnNum = list.front();
+	char returnSym = list.front();
 	list.pop_front();
-	return returnNum;
+	return returnSym;
 }
 
 bool Queue::empty()

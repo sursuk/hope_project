@@ -12,12 +12,12 @@ public:
 	Queue(std::string path);
 	~Queue();
 
-	void push(float number);
+	void push(char symbol);
 
-	float get_element();
+	char get_element();
 
 	bool empty();
 
 private:
-	std::list<float> list;
+	std::list<char> list;
 };
